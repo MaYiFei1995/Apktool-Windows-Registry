@@ -1,0 +1,21 @@
+Windows Registry Editor Version 5.00
+
+; Manifest.reg
+
+[HKEY_CLASSES_ROOT\*\Shell\ApkHelper]
+
+"MUIVerb"="APK Helper"
+
+"SubCommands"=""
+
+"Position"="Center"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell]
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\ShowManifest]
+
+@="Manifest"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\ShowManifest\command]
+
+@="PowerShell -noexit apkanalyzer manifest print \"%1\" >  \"%1.AndroidManifest.xml\"  "

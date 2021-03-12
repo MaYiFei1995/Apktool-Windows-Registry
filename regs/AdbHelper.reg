@@ -1,0 +1,37 @@
+Windows Registry Editor Version 5.00
+
+; AdbHelper.reg
+
+[HKEY_CLASSES_ROOT\*\Shell\ApkHelper]
+
+"MUIVerb"="APK Helper"
+
+"SubCommands"=""
+
+"Position"="Center"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell]
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\InstallR]
+
+@="adb install -r"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\InstallR\command]
+
+@="PowerShell -noexit adb install -r \"%1\" "
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\InstallT]
+
+@="adb install -t"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\InstallT\command]
+
+@="PowerShell -noexit adb install -r -t \"%1\" "
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\SignNew]
+
+@="Jarsigner"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell\SignNew\command]
+
+@="PowerShell -noexit jarsigner -verbose -keystore F:\Decompile\windows签名工具\Test.keystore -storepass 123456 -signedjar \"%1.signed.apk\"  \"%1\"  test -digestalg SHA1 -sigalg MD5withRSA  "

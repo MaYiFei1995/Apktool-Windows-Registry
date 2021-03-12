@@ -1,0 +1,39 @@
+Windows Registry Editor Version 5.00
+
+; apktool.reg
+
+[HKEY_CLASSES_ROOT\*\shell\APKTool]
+
+"MUIVerb"="APKTool"
+
+"SubCommands"=""
+
+"Position"="Center"
+
+[HKEY_CLASSES_ROOT\*\shell\APKTool\shell]
+
+[HKEY_CLASSES_ROOT\*\shell\APKTool\shell\apktoold]
+
+@="apktool d"
+
+[HKEY_CLASSES_ROOT\*\shell\APKTool\shell\apktoold\command]
+
+@="PowerShell -noexit java -jar .\\apktool_2.5.0.jar d \"%1\" --only-main-classes"
+
+[HKEY_CLASSES_ROOT\Folder\shell\APKTool]
+
+"MUIVerb"="APKTool"
+
+"SubCommands"=""
+
+"Position"="Center"
+
+[HKEY_CLASSES_ROOT\Folder\shell\APKTool\shell]
+
+[HKEY_CLASSES_ROOT\Folder\shell\APKTool\shell\apktoolb]
+
+@="apktool b"
+
+[HKEY_CLASSES_ROOT\Folder\shell\APKTool\shell\apktoolb\command]
+
+@="PowerShell -noexit java -jar .\\apktool_2.5.0.jar b \"%1\" -o new.apk"
