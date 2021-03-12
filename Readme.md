@@ -5,7 +5,7 @@
 ***
 
 ## 效果
-![效果图](https://MaYiFei1995.github.io/img/2021-03-03-1.png)
+![效果图](./imgs/1.png)
 ---
 
 ## 功能
