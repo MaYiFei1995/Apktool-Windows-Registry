@@ -1,0 +1,29 @@
+Windows Registry Editor Version 5.00
+
+; ApkSigner.reg
+
+[HKEY_CLASSES_ROOT\*\Shell\ApkHelper]
+
+"MUIVerb"="APK Helper"
+
+"SubCommands"=""
+
+"Position"="Center"
+
+[HKEY_CLASSES_ROOT\*\shell\ApkHelper\Shell]
+
+[HKEY_CLASSES_ROOT\*\shell\APKHelper\shell\Jarsigner]
+
+@="Jarsigner"
+
+[HKEY_CLASSES_ROOT\*\shell\APKHelper\shell\Jarsigner\command]
+
+@="PowerShell -noexit jarsigner -verbose -keystore F:\\Decompile\\windows签名工具\\Test.keystore -storepass 123456 -signedjar \"%1.signed.apk\"  \"%1\"  test -digestalg SHA1 -sigalg MD5withRSA "
+
+[HKEY_CLASSES_ROOT\*\shell\APKHelper\shell\ApkSigner]
+
+@="ApkSigner--v1&v2"
+
+[HKEY_CLASSES_ROOT\*\shell\APKHelper\shell\ApkSigner\command]
+
+@="PowerShell -noexit E:\\Android\\Sdk\\build-tools\\30.0.3\\apksigner.bat sign --out \"%1.signed.apk\" --ks F:\\Decompile\\windows签名工具\\Test.keystore --ks-key-alias test \"%1\" "
