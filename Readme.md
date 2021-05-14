@@ -18,9 +18,10 @@
 - [导出 apk 的 AndroidManifest.xml](./regs/Manifest.reg)（*需要在环境变量中配置`ApkAnalyzer`，并为`ApkAnalyzer`配置[启动脚本](./regs/ApkAnalyzer.cmd)修改`APP_HOME`*）
 - [apktool d / b](./regs/Apktool.reg)(*脚本中写的`apktool`是相对路径，根据需要修改*)
 - [d2j 相关命令 & smali/baksmali](./regs/D2J.reg)(*脚本中的各个jar为绝对路径，根据需要修改*)
+- [打印签名、apk的签名信息](./regs/PrintCertInfo.reg)(*Apk文件需要提取 META-INF 目录中的 .RSA 文件并使用CertInfo；jks 与 keystore 文件直接使用 Keystore Info*)
 
 待实现
-- dex 2 jarDex (*需要cd到路径操作文件，否则生成的jardex会包含完整目录*)
+- dex 2 jarDex (*需要cd到路径操作文件，否则生成的jar dex会包含完整目录*)
 
 ---
 
