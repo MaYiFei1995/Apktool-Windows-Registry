@@ -5,26 +5,54 @@
 ***
 
 ## 效果
-![效果图](./imgs/1.png)
+
+- apk
+![Apk](./imgs/apk.png)
+
+- dex
+![Dex](./imgs/dex.png)
+
+- folder
+![Folder](./imgs/folder.png)
+
 ---
 
 ## 功能
-全部功能参照 [main.reg](./regs/main.reg)
 
-已实现
-- [adb install -r / -t](./regs/AdbHelper.reg)（*需要在环境变量中配置adb*）
-- [使用 jarsigner 重签名](./regs/AdbHelper.reg)（*需要修改签名文件信息*）
-- [使用 ApkSigner 进行v1&v2重签名](./regs/ApkSigner.reg)（*需要修改签名文件信息*）
-- [导出 apk 的 AndroidManifest.xml](./regs/Manifest.reg)（*需要在环境变量中配置`ApkAnalyzer`，并为`ApkAnalyzer`配置[启动脚本](./regs/ApkAnalyzer.cmd)修改`APP_HOME`*）
-- [apktool d / b](./regs/Apktool.reg)(*脚本中写的`apktool`是相对路径，根据需要修改*)
-- [d2j 相关命令 & smali/baksmali](./regs/D2J.reg)(*脚本中的各个jar为绝对路径，根据需要修改*)
-- [打印签名、apk的签名信息](./regs/PrintCertInfo.reg)(*Apk文件需要提取 META-INF 目录中的 .RSA 文件并使用CertInfo；jks 与 keystore 文件直接使用 Keystore Info*)
+- [adb install -r / -t](./regs/adb.reg)（需要在环境变量中配置adb所在路径）
+- [APK 重签名 v1 / v1&v2](./regs/sign.reg)（需要修改 SDK_DIR 和 keystore 信息）
+- [导出 apk 的 AndroidManifest.xml](./regs/apkanalyzer.reg)（需要在环境变量中配置`Android_Sdk\tools\bin`目录，在目录下新建脚本[ApkAnalyzer.cmd](./regs/ApkAnalyzer.cmd)，修改`APP_HOME`）
+- [apktool -d](./regs/apktoolD.reg)(脚本中写的`apktool.jar`是相对路径，根据需要修改)
+- [apktool -b](./regs/apktoolB.reg)(同上)
+- [打印 apk 中 rsa 文件的签名信息](./regs/cert.reg)(需要配置 jdk 环境变量)
+- [打印 keystore 和 jks 文件的签名信息](./regs/keystore.reg)(同上)
+- [dex2jar & dex2smali](./regs/dex.reg)(`d2j`和`baksmali.jar`需要配置)
+- [cfr.jar](./regs/cfr.reg)(配置`cfr.jar`)
+- [jar2dex](./regs/jar2dex.reg)(配置`dx.jar`)
 
-待实现
-- dex 2 jarDex (*需要cd到路径操作文件，否则生成的jar dex会包含完整目录*)
+---
+
+## 配置
+
+1. 在注册表中找到`HKEY_CLASSES_ROOT`下的`.xxx`，确定拓展名对应的配置
+
+2. 如果没有拓展名，手动创建，然后新建项`.xxx/shell/name/command`或`.xxx/shell/sub/shell/name/command`
+
+3. 部分的类型被其他软件注册，可以看到
+
+    ![1](./imgs/config_1.png)
+
+    或
+
+    ![2](./imgs/config_2.png)
+
+    需要到对应的项下去配置，如
+
+    ![3](./imgs/config_3.png)
+
+4. 参照本机路径和环境、文件位置配置注册表命令
 
 ---
 
 # Todo
-1. 只为 apk 文件注册右键菜单组（**目前除了`apktool b`和`smali2dex`指定了`Floder`，其它都是`*`，配置`.apk`没有效果，还需要查资料**）
-2. 配置命令执行 python 脚本对重签名的文件名进行优化（**目前生成的文件名都是原文件名后增加，通过 python 解析文件名输出更友好**）
+使用 GUI 实现全部功能
