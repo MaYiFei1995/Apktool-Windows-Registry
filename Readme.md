@@ -29,7 +29,8 @@
 - [dex2jar & dex2smali](./regs/dex.reg)(`d2j`和`baksmali.jar`需要配置)
 - [cfr.jar](./regs/cfr.reg)(配置`cfr.jar`)
 - [jar2dex](./regs/jar2dex.reg)(配置`dx.jar`)
-
+- [class2dex](./regs/class2dex.reg)(配置`SDK_DIR`)
+- [bundletool-aab转apks&apks安装](./regs/bundletool.reg)(配置`DIR`)
 ---
 
 ## 配置
