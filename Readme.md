@@ -34,6 +34,7 @@
 - [jar2dex](./regs/jar2dex.reg)(配置`dx.jar`)
 - [class2dex](./regs/class2dex.reg)(配置`SDK_DIR`)
 - [bundletool-aab转apks&apks安装](./regs/bundletool.reg)(配置`DIR`)
+- [zipalign APK4字节检查与对齐](./regs/zipalign.reg)(配置`BUILD_TOOLS_DIR`)
 ---
 
 ## 配置
