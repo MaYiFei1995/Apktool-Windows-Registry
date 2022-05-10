@@ -7,16 +7,16 @@
 ## 效果
 
 - apk
-![Apk](./imgs/apk.png)
+![apk](./imgs/apk.png)
 
 - dex
-![Dex](./imgs/dex.png)
+![dex](./imgs/dex.png)
 
 - folder
 ![Folder](./imgs/folder.png)
 
 - aab
-![Aab](./imgs/aab.png)
+![aab](./imgs/aab.png)
 
 ---
 
@@ -35,6 +35,7 @@
 - [class2dex](./regs/class2dex.reg)(配置`SDK_DIR`)
 - [bundletool-aab转apks&apks安装](./regs/bundletool.reg)(配置`DIR`)
 - [zipalign APK4字节检查与对齐](./regs/zipalign.reg)(配置`BUILD_TOOLS_DIR`)
+- [enjarify-反编译jar2dex](./regs/enjarify.reg)(配置DIR)
 ---
 
 ## 配置
