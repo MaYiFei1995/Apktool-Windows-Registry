@@ -36,6 +36,7 @@
 - [bundletool-aab转apks&apks安装](./regs/bundletool.reg)(配置`DIR`)
 - [zipalign APK4字节检查与对齐](./regs/zipalign.reg)(配置`BUILD_TOOLS_DIR`)
 - [enjarify-反编译jar2dex](./regs/enjarify.reg)(配置DIR)
+- [通过CertUtil打印文件的MD5值](./regs/md5.reg)
 ---
 
 ## 配置

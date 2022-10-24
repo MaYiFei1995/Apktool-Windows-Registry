@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\cert_util_md5\]
+@="CertUtil-MD5"
+
+[HKEY_CLASSES_ROOT\*\shell\cert_util_md5\command]
+@="PowerShell -noexit certutil -hashfile \"%1\" MD5"
+
